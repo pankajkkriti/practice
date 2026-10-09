@@ -1,6 +1,222 @@
-<mvc:View controllerName="com.aarti.practice.controller.App"
+<mvc:View
+    controllerName="com.aarti.practice.controller.App"
     xmlns:mvc="sap.ui.core.mvc"
     xmlns="sap.m">
-    <Page id="page" title="{i18n>title}">
-    </Page>
+
+    <App id="mainApp">
+
+        <pages>
+
+            <Page
+                id="homePage"
+                title="{i18n>appTitle}"
+                showHeader="true">
+
+                <customHeader>
+
+                    <OverflowToolbar
+                        id="homeHeaderToolbar"
+                        class="practiceHeaderToolbar">
+
+                        <Button
+                            id="applicationIcon"
+                            icon="sap-icon://business-objects-experience"
+                            type="Transparent"
+                            tooltip="{i18n>appTitle}"
+                            enabled="false"
+                        />
+
+                        <Title
+                            id="applicationTitle"
+                            text="{i18n>appTitle}"
+                            level="H2"
+                        />
+
+                        <ToolbarSpacer id="_IDGenToolbarSpacer1" />
+
+                        <Button
+                            id="notificationButton"
+                            icon="sap-icon://bell"
+                            type="Transparent"
+                            tooltip="{i18n>notificationTooltip}"
+                            press=".onNotificationPress"
+                        />
+
+                        <Button
+                            id="userButton"
+                            icon="sap-icon://employee"
+                            text="{i18n>userName}"
+                            type="Transparent"
+                            tooltip="{i18n>userTooltip}"
+                            press=".onUserPress"
+                        />
+
+                    </OverflowToolbar>
+
+                </customHeader>
+
+                <content>
+
+                    <VBox
+                        id="homeContent"
+                        width="100%"
+                        class="sapUiResponsiveContentPadding">
+
+                        <VBox
+                            id="welcomeSection"
+                            width="100%"
+                            class="practiceWelcomeSection sapUiMediumMarginBottom">
+
+                            <Title
+                                id="welcomeTitle"
+                                text="{i18n>welcomeTitle}"
+                                level="H1"
+                                class="sapUiTinyMarginBottom"
+                            />
+
+                            <Text
+                                id="welcomeDescription"
+                                text="{i18n>welcomeText}"
+                                wrapping="true"
+                                class="practiceWelcomeText sapUiSmallMarginBottom"
+                            />
+
+                            <Button
+                                id="viewEmployeesButton"
+                                text="{i18n>viewEmployeesButton}"
+                                icon="sap-icon://employee-pane"
+                                type="Emphasized"
+                                press=".onViewEmployees"
+                            />
+
+                        </VBox>
+
+                        <Title
+                            id="overviewTitle"
+                            text="{i18n>overviewTitle}"
+                            level="H2"
+                            class="sapUiSmallMarginBottom"
+                        />
+
+                        <FlexBox
+                            id="dashboardCardContainer"
+                            width="100%"
+                            wrap="Wrap"
+                            renderType="Div">
+
+                            <VBox
+                                id="employeeCard"
+                                class="practiceDashboardCard sapUiSmallMarginEnd sapUiSmallMarginBottom">
+
+                                <Button
+                                    id="employeeCardIcon"
+                                    icon="sap-icon://group"
+                                    type="Transparent"
+                                    enabled="false"
+                                    class="practiceCardIcon"
+                                />
+
+                                <Title
+                                    id="employeeCardTitle"
+                                    text="{i18n>employeeCardTitle}"
+                                    level="H3"
+                                    class="sapUiTinyMarginBottom"
+                                />
+
+                                <Text
+                                    id="employeeCardText"
+                                    text="{i18n>employeeCardText}"
+                                    wrapping="true"
+                                />
+
+                            </VBox>
+
+                            <VBox
+                                id="assetCard"
+                                class="practiceDashboardCard sapUiSmallMarginEnd sapUiSmallMarginBottom">
+
+                                <Button
+                                    id="assetCardIcon"
+                                    icon="sap-icon://laptop"
+                                    type="Transparent"
+                                    enabled="false"
+                                    class="practiceCardIcon"
+                                />
+
+                                <Title
+                                    id="assetCardTitle"
+                                    text="{i18n>assetCardTitle}"
+                                    level="H3"
+                                    class="sapUiTinyMarginBottom"
+                                />
+
+                                <Text
+                                    id="assetCardText"
+                                    text="{i18n>assetCardText}"
+                                    wrapping="true"
+                                />
+
+                            </VBox>
+
+                            <VBox
+                                id="reportCard"
+                                class="practiceDashboardCard sapUiSmallMarginBottom">
+
+                                <Button
+                                    id="reportCardIcon"
+                                    icon="sap-icon://business-objects-experience"
+                                    type="Transparent"
+                                    enabled="false"
+                                    class="practiceCardIcon"
+                                />
+
+                                <Title
+                                    id="reportCardTitle"
+                                    text="{i18n>reportCardTitle}"
+                                    level="H3"
+                                    class="sapUiTinyMarginBottom"
+                                />
+
+                                <Text
+                                    id="reportCardText"
+                                    text="{i18n>reportCardText}"
+                                    wrapping="true"
+                                />
+
+                            </VBox>
+
+                        </FlexBox>
+
+                    </VBox>
+
+                </content>
+
+                <footer>
+
+                    <OverflowToolbar id="footerToolbar">
+
+                        <Text
+                            id="footerText"
+                            text="{i18n>footerText}"
+                        />
+
+                        <ToolbarSpacer id="_IDGenToolbarSpacer2" />
+
+                        <ObjectStatus
+                            id="applicationStatus"
+                            text="{i18n>applicationStatus}"
+                            state="Success"
+                            icon="sap-icon://sys-enter-2"
+                        />
+
+                    </OverflowToolbar>
+
+                </footer>
+
+            </Page>
+
+        </pages>
+
+    </App>
+
 </mvc:View>
