@@ -1,7 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
 <mvc:View
     controllerName="com.aarti.practice.controller.App"
     xmlns:mvc="sap.ui.core.mvc"
-    xmlns="sap.m">
+    xmlns="sap.m"
+    displayBlock="true">
 
     <App id="mainApp">
 
@@ -9,9 +12,9 @@
 
             <Page
                 id="homePage"
-                title="{i18n>appTitle}"
                 showHeader="true">
 
+                <!-- Custom Application Header -->
                 <customHeader>
 
                     <OverflowToolbar
@@ -55,6 +58,7 @@
 
                 </customHeader>
 
+                <!-- Main Page Content -->
                 <content>
 
                     <VBox
@@ -62,6 +66,7 @@
                         width="100%"
                         class="sapUiResponsiveContentPadding">
 
+                        <!-- Welcome Section -->
                         <VBox
                             id="welcomeSection"
                             width="100%"
@@ -81,16 +86,23 @@
                                 class="practiceWelcomeText sapUiSmallMarginBottom"
                             />
 
-                            <Button
-                                id="viewEmployeesButton"
-                                text="{i18n>viewEmployeesButton}"
-                                icon="sap-icon://employee-pane"
-                                type="Emphasized"
-                                press=".onViewEmployees"
-                            />
+                            <HBox
+                                id="welcomeActionContainer"
+                                width="100%">
+
+                                <Button
+                                    id="viewEmployeesButton"
+                                    text="{i18n>viewEmployeesButton}"
+                                    icon="sap-icon://employee-pane"
+                                    type="Emphasized"
+                                    press=".onViewEmployees"
+                                />
+
+                            </HBox>
 
                         </VBox>
 
+                        <!-- Application Overview Heading -->
                         <Title
                             id="overviewTitle"
                             text="{i18n>overviewTitle}"
@@ -98,12 +110,15 @@
                             class="sapUiSmallMarginBottom"
                         />
 
+                        <!-- Dashboard Cards Container -->
                         <FlexBox
                             id="dashboardCardContainer"
                             width="100%"
+                            direction="Row"
                             wrap="Wrap"
                             renderType="Div">
 
+                            <!-- Employee Card -->
                             <VBox
                                 id="employeeCard"
                                 class="practiceDashboardCard sapUiSmallMarginEnd sapUiSmallMarginBottom">
@@ -113,6 +128,7 @@
                                     icon="sap-icon://group"
                                     type="Transparent"
                                     enabled="false"
+                                    tooltip="{i18n>employeeCardTitle}"
                                     class="practiceCardIcon"
                                 />
 
@@ -131,6 +147,7 @@
 
                             </VBox>
 
+                            <!-- Asset Card -->
                             <VBox
                                 id="assetCard"
                                 class="practiceDashboardCard sapUiSmallMarginEnd sapUiSmallMarginBottom">
@@ -140,6 +157,7 @@
                                     icon="sap-icon://laptop"
                                     type="Transparent"
                                     enabled="false"
+                                    tooltip="{i18n>assetCardTitle}"
                                     class="practiceCardIcon"
                                 />
 
@@ -158,6 +176,7 @@
 
                             </VBox>
 
+                            <!-- Report Card -->
                             <VBox
                                 id="reportCard"
                                 class="practiceDashboardCard sapUiSmallMarginBottom">
@@ -167,6 +186,7 @@
                                     icon="sap-icon://business-objects-experience"
                                     type="Transparent"
                                     enabled="false"
+                                    tooltip="{i18n>reportCardTitle}"
                                     class="practiceCardIcon"
                                 />
 
@@ -191,6 +211,7 @@
 
                 </content>
 
+                <!-- Application Footer -->
                 <footer>
 
                     <OverflowToolbar id="footerToolbar">
